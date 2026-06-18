@@ -1,0 +1,11 @@
+apiVersion: v1         
+kind: Service             
+  name: my-service        
+spec:
+  selector:
+   x: y 
+  ports:
+   - port: 80
+     targetPort: 80
+     nodePort: 30007
+  type: NodePort     

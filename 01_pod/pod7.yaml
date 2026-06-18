@@ -1,0 +1,22 @@
+# pod7.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod7
+  labels:
+					app: nginx
+					env: dev
+
+spec:
+  containers:
+    - name: nginxnginx-container
+      image: nginx:1.14.2
+      command: ["sh", "-c", "touch abc.txt && nginx -g 'daemon off;'"]
+
+      spec:
+				  containers:
+				  - name: nginx-container
+					  image: nginx:1.14.2
+            ports:
+              - containerPort: 80

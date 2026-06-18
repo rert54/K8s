@@ -1,0 +1,13 @@
+clusterip-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+ name: nginx-clusterip-service
+spec:
+ selector:
+  app: web
+ ports:
+ - port: 80        # Service 포트 즉,  
+   targetPort: 80
+type:
+  ClusterIP

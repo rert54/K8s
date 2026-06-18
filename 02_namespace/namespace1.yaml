@@ -1,0 +1,5 @@
+# namespace1.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: prod

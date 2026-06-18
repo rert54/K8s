@@ -1,0 +1,13 @@
+ # pod6.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+	name: pod6
+	labels:
+	app: nginx
+	env: dev
+spec:
+	containers:
+		- name: nginx-container
+		image: nginx:1.14.2
