@@ -1,0 +1,13 @@
+# pod-envFrom.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: envfrom-secret
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+    envFrom:
+    - secretRef:
+        name: secret-test

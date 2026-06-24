@@ -1,0 +1,10 @@
+# configmap.yaml
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-configmap
+data:
+  index_data: |
+    <h1>Hello ConfigMap</h1>
+    <p>K8s ConfigMap</p>

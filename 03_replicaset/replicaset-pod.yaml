@@ -1,24 +1,22 @@
- apiVersion: apps/v1  # API Version.  kubectl api-resources  확인 가능.
-			kind: ReplicaSet
-			metadata:
-			  name: frontend     # ReplicaSet 이름 
-			  labels:			 # Label 지정 
-				app: guestbook
-				tier: frontend
-			spec:
-			  # modify replicas according to your case
-			  replicas: 3		 # Pod 개수, desired state 임.
-			  
-			  selector:			 # 접근하고자 하는 리소스 찾을 때 사용하는 속성
-				matchLabels:
-				  tier: frontend #  tier: frontend 형태로 된 label을 찾음. (*******************)
-				  
-				  
-			  template:   # ReplicaSet이 만들어야 되는 Pod 정보 지정하는 영역.
-				metadata:
-				  labels:
-					tier: frontend #  tier: frontend 형태로 마킹. (*******************)
-				spec:
-				  containers:
-				  - name: php-redis   # 컨테이너이름
-					image: us-docker.pkg.dev/google-samples/containers/gke/gb-frontend:v5 # Pod의 base이미지명
+# replicaset-pod.yaml
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-pod
+
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:1.14.2

@@ -1,0 +1,28 @@
+# pod-valueFrom.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-single-secret
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+    env:
+    - name: SECRET_USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: secret-test
+          key: username
+          
+    - name: SECRET_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: secret-test
+          key: password
+
+    - name: SECRET_EMAIL
+      valueFrom:
+        secretKeyRef:
+          name: secret-test
+          key: email          

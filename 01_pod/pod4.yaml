@@ -1,3 +1,4 @@
+# pod4.yaml
 
 apiVersion: v1
 kind: Pod
@@ -5,6 +6,6 @@ metadata:
   name: pod4
 spec:
   containers:
-    - name: nginxnginx-container
-      image: nginx:1.14.2
+  - name: nginx-container
+    image: nginx:1.14.2
 

@@ -1,9 +1,7 @@
-# pod6.yaml
-
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod6
+  name: init-basic-pod
   labels:
     app: nginx
     env: dev
@@ -11,4 +9,5 @@ spec:
   containers:
   - name: nginx-container
     image: nginx:1.14.2
-
+    ports:
+    - containerPort: 80

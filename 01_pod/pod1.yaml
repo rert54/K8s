@@ -6,8 +6,6 @@ metadata:
   name: pod1
 spec:
   containers:
-    - name: nginxnginx-container
-      image: nginx:1.14.2
+  - name: nginx-container
+    image: nginx:1.14.2
 
-    - name: redis-container
-      image: redis

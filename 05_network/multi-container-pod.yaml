@@ -1,3 +1,5 @@
+# multi-container-pod.yaml
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -6,7 +8,7 @@ spec:
   containers:
   - name: ubuntu-container
     image: ubuntu
-    command: ['sh', '-c', 'apt update && apt full-upgrade -y && apt install curl -y && sleep 3600']
+    command: ['sh', '-c', 'apt update && apt full-upgrade -y && apt install curl  -y  && sleep 3600'] 
 
   - name: nginx-container
     image: nginx:1.14.2

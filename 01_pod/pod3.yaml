@@ -1,18 +1,18 @@
-#pod3.yaml
-
+# pod3.yaml
 
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod1
+  name: pod3
 spec:
   containers:
-    - name: nginxnginx-container
-      image: nginx:1.14.2
+  - name: nginx-container
+    image: nginx:1.14.2
 
-    - name: redis-container
-      image: redisLlastest
+  - name: redis-container
+    image: redis:latest 
 
-    - name: hello-container
-      image: hello-world
-      imagePullPolicy: IfNotPresent
+  - name: busybox-container
+    image: busybox:1.28
+    command: ['sh', '-c', 'echo "Hello, Kubernetes!" && sleep 3600'] 
+    imagePullPolicy: IfNotPresent 

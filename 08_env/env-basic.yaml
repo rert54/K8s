@@ -1,0 +1,19 @@
+# env-basic.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-basic-pod
+spec:
+  containers:
+  - name: nginx-containers
+    image: nginx
+    env:
+     - name: GREETING    
+       value: "Warm greetings to"
+     - name: HONORIFIC
+       value: "The Most Honorable"
+     - name: NAME
+       value: "Kubernetes"
+     - name: MESSAGE
+       value: "$(GREETING) $(HONORIFIC) $(NAME)" 

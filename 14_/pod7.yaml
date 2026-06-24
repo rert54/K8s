@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod7
+  name: init-basic-pod
   labels:
     app: nginx
     env: dev
@@ -13,3 +13,8 @@ spec:
     image: nginx:1.14.2
     ports:
     - containerPort: 80
+
+  initContainers:
+  - name: init-myservice
+    image: busybox:1.28
+    command: ['sh', '-c', "echo '1init container' && sleep 5 && echo '2init container' sleep 120 "]

@@ -1,0 +1,22 @@
+# game-single-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: game-single-pod 
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:1.14.2
+    env:
+      - name: PLAYER_INITIAL_LIVES
+        valueFrom:
+          configMapKeyRef:
+            name: game-configmap           
+            key: player_initial_lives 
+     
+      - name: GAME_PROPERTIES
+        valueFrom:
+          configMapKeyRef:
+            name: game-configmap           
+            key: game.properties 

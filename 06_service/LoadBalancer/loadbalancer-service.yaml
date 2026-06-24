@@ -1,0 +1,14 @@
+# loadbalancer-service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-loadbalancer-service
+spec:
+  selector:
+    app: web
+  ports:
+    - port: 85
+      targetPort: 80
+  type:
+    LoadBalancer

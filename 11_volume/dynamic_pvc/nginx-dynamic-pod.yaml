@@ -1,0 +1,21 @@
+# nginx-dynamic-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dynamic-nginx-pod
+  labels:
+    app: web
+spec:
+  containers:
+  - image: nginx
+    name: nginx-container
+
+    volumeMounts:
+    - mountPath: /usr/share/nginx/html
+      name: shared-volume
+
+  volumes:
+  - name: shared-volume
+    persistentVolumeClaim:
+      claimName: dynamic-pvc
